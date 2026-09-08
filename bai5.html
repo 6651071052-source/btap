@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển trên form</title>
+</head>
+<body>
+
+    <!-- Tạo Form -->
+    <form id="formDangNhap">
+        <table border="1" bordercolor="#006699" cellpadding="5" cellspacing="0" align="center" style="border-collapse: collapse; width: 350px;">
+            <!-- Dòng 1: Tiêu đề -->
+            <tr>
+                <td colspan="2" align="center" style="color: #8B4513; font-weight: bold; font-size: 20px;">
+                    Đăng nhập
+                </td>
+            </tr>
+
+            <!-- Dòng 2: Mã người dùng -->
+            <tr>
+                <td>Mã người dùng:</td>
+                <td>
+                    <input type="text" id="txtUser" value="ptnhung" style="width: 95%;">
+                </td>
+            </tr>
+
+            <!-- Dòng 3: Mật khẩu -->
+            <tr>
+                <td>Mật khẩu:</td>
+                <td>
+                    <input type="password" id="txtPass" style="width: 95%;">
+                </td>
+            </tr>
+
+            <!-- Dòng 4: Nút Đồng ý -->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" id="btnDongY" value="Đồng ý" onclick="xuLyDangNhap()">
+                </td>
+            </tr>
+
+            <!-- Dòng 5: Ô hiển thị nhãn kết quả -->
+            <tr>
+                <td colspan="2" align="center">
+                    <div id="lblKetQua" style="color: #0000FF; font-weight: bold; min-height: 20px;"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- Đoạn mã xử lý chức năng -->
+    <script>
+        function xuLyDangNhap() {
+            // Lấy giá trị từ ô Mã người dùng
+            var maUser = document.getElementById("txtUser").value;
+            
+            // Gán nội dung lấy được vào thẻ nhãn div bên dưới
+            document.getElementById("lblKetQua").innerText = maUser;
+        }
+    </script>
+
+</body>
+</html>
